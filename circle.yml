@@ -1,0 +1,35 @@
+machine:
+  environment:
+    IMAGE_NAME: astronomerio/google-analytics-source  
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build --rm=false -t $IMAGE_NAME .
+
+test:
+  override: 
+    - docker run --entrypoint npm $IMAGE_NAME run lint
+    - docker run --entrypoint npm $IMAGE_NAME run coverage
+  post:
+    - mkdir $CIRCLE_ARTIFACTS/coverage
+    # get the name of the container and copy the coverage directory into $CIRCLE_ARTIFACTS
+    - docker cp $(docker ps -l --format "{{.Names}}"):/usr/local/src/coverage $CIRCLE_ARTIFACTS
+
+deployment:
+  # git tags get deployed to docker hub with the latest tag
+  production:
+    tag: /[0-9]+(\.[0-9]+)*/
+    owner: aries-data
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push $IMAGE_NAME
+  # changes to the master branch are deployed and tagged master
+  staging:
+    branch: master
+    commands:
+      - docker tag $IMAGE_NAME:latest $IMAGE_NAME:master
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push $IMAGE_NAME:master

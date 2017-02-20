@@ -1,0 +1,8 @@
+{
+    "extends": "airbnb",
+    "plugins": ["babel"],
+    "parser": "babel-eslint",
+    "rules": {
+      "indent": ["error", 4]
+    }
+}
