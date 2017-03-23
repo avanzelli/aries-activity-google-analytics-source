@@ -19,11 +19,11 @@ describe('GoogleAnalyticsSource', () =>  {
 
     describe('#Get Auth ', () =>  {
         it('shuld use util file to generate authentication for api', () =>  {
-            assert(GA.getAuth(config), 'get auth should retrun oauth creds');
+            assert(GA.getAuth(config.connection), 'get auth should retrun oauth creds');
         });
     });
 
-    const auth = GA.getAuth(config);
+    const auth = GA.getAuth(config.connection);
 
     describe('#Request Report', () =>  {
         it('should make a request to googles api and return response', () =>  {
@@ -48,7 +48,8 @@ describe('GoogleAnalyticsSource', () =>  {
             assert(resp[0].columnHeader !== undefined, 'There should be a response from googles api thats not undefined');
         });
         it('should make a request with the list of viewIds',async  () => {
-            const resp = await GA.viewRequestModifier(config,  auth);
+            const reqs = await GA.viewRequestModifier(config,TZ);
+            const resp = await GA.makeMultipleViewRequests(reqs, auth);
             assert(resp[0].columnHeader !== undefined, 'There should be a response from googles api thats not undefined');
         });
     });

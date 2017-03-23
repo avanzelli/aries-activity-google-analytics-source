@@ -4,8 +4,10 @@ export default {
     addTimeFilter: false,
     timeZone: 'America/New_York',
     viewIds: JSON.parse(process.env.VIEW_IDS),
-    client: JSON.parse(process.env.CLIENT_CREDS),
-    oauth2: JSON.parse(process.env.OAUTH2),   
+    connection:{
+        client: JSON.parse(process.env.CLIENT_CREDS),
+        oauth2: JSON.parse(process.env.OAUTH2)
+    },   
     request: [
     {
         "dateRanges": [
