@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "aries-data": "aries-data/aries-data#2.0.3",
+    "chai": "^4.0.2",
     "google-auth-library": "^0.10.0",
     "googleapis": "^16.1.0",
     "knex": "^0.12.9",
@@ -38,6 +39,7 @@
     "lodash.isfunction": "^3.0.8",
     "lodash.tolower": "^4.1.2",
     "mocha": "^3.2.0",
+    "moment": "^2.18.1",
     "moment-timezone": "^0.5.11",
     "pg": "^6.1.5",
     "promise": "^7.1.1",
