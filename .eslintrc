@@ -3,6 +3,9 @@
     "plugins": ["babel"],
     "parser": "babel-eslint",
     "rules": {
-      "indent": ["error", 4]
+      "indent": ["error", 4],
+      "no-loop-func":"off",
+      "class-methods-use-this":"off",
+      "no-useless-return":"off"
     }
 }

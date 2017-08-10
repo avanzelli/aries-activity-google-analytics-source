@@ -3,3 +3,5 @@ npm-debug.log
 .DS_Store
 app.log
 coverage
+.env
+temp_test_index.js

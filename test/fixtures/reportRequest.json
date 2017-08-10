@@ -1,0 +1,57 @@
+{
+  "reports": [
+    {
+      "columnHeader": {
+        "dimensions": [
+          "ga:date"
+        ],
+        "metricHeader": {
+          "metricHeaderEntries": [
+            {
+              "name": "ga:sessions",
+              "type": "INTEGER"
+            }
+          ]
+        }
+      },
+      "data": {
+        "rows": [
+          {
+            "dimensions": [
+              "20170809"
+            ],
+            "metrics": [
+              {
+                "values": [
+                  "363"
+                ]
+              }
+            ]
+          }
+        ],
+        "totals": [
+          {
+            "values": [
+              "363"
+            ]
+          }
+        ],
+        "rowCount": 1,
+        "minimums": [
+          {
+            "values": [
+              "363"
+            ]
+          }
+        ],
+        "maximums": [
+          {
+            "values": [
+              "363"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

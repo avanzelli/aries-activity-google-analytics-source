@@ -1,0 +1,32 @@
+{
+  "kind": "analytics#accountSummaries",
+  "username": "implementation@astronomer.io",
+  "totalResults": 2,
+  "startIndex": 1,
+  "itemsPerPage": 1000,
+  "items": [
+    {
+      "id": "12345678",
+      "kind": "analytics#accountSummary",
+      "name": "Eastwood Emoji Enthusiasts",
+      "webProperties": [
+        {
+          "kind": "analytics#webPropertySummary",
+          "id": "UA-12345678-2",
+          "name": "Emoji Enthusiast's website",
+          "internalWebPropertyId": "987654321",
+          "level": "PREMIUM",
+          "websiteUrl": "http://eee.com",
+          "profiles": [
+            {
+              "kind": "analytics#profileSummary",
+              "id": "976431852",
+              "name": "EEE (Reporting View) - eee.com",
+              "type": "WEB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
